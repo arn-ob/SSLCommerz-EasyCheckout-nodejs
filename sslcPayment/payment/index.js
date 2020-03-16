@@ -20,8 +20,8 @@ module.exports = async (data = {}, isLive = false, isFastCheckout = false) => {
             formData: data
         };
         request(options, function (error, response) {
-            if (error) throw new Error(error);
-            resolve( JSON.parse(response.body))
+            if (error) reject(error);
+            resolve(JSON.parse(response.body))
         });
     })
 }
